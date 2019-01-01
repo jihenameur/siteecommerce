@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Products </h1>
+<ul>
+             {% for product in products %}
+			<li style=" margin:15px; list-style: none; float:left; padding:15px;background:#ccc">
+				<h3>{{ product.libelle }}</h3>
+				<p>{{ product.descriptif }}</p>
+				<b>{{ product.price }}</b>
+				<br><a href="{{ path('product_show', { 'id': product.id }) }}">Détails</a>
+			</li>
+			 
+			 
+		{% endfor %}
+    </ul>
+        <ul>
+      		 
+        <li>
+            <a href="{{ path('category_index') }}">Back tohome</a>
+        </li>
+        
+     
+        
+    </ul>
+{% endblock %}
